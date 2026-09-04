@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+title: Galeri
+eleventyNavigation:
+  key: Galeri
+  order: 5
+---
+<section class="px-8 py-16 max-w-5xl mx-auto">
+	<h1 class="text-4xl font-bold mb-2 text-white">Galeri Kegiatan SESClub</h1>
+<p class="text-blue-100 mb-10">Dokumentasi visual dari kegiatan-kegiatan SESClub.</p>
+	<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+	{%- for foto in galeri.foto | reverse %}
+		<div class="rounded-lg overflow-hidden shadow-md">
+			<img src="{{ foto.src }}" alt="{{ foto.judul }}" class="w-full h-48 object-cover">
+			<div class="p-3 bg-gray-50">
+				<p class="font-medium text-sm">{{ foto.judul }}</p>
+				<p class="text-xs text-gray-500">{{ foto.tanggal }}</p>
+			</div>
+		</div>
+	{%- endfor %}
+	</div>
+</section>

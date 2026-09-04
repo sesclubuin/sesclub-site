@@ -1,0 +1,24 @@
+{
+  "foto": [
+    {
+      "judul": "Workshop PLTS Dasar",
+      "tanggal": "2024-03-15",
+      "src": "https://placehold.co/400x300?text=Foto+1"
+    },
+    {
+      "judul": "Kunjungan Pembangkit Listrik",
+      "tanggal": "2024-04-10",
+      "src": "https://placehold.co/400x300?text=Foto+2"
+    },
+    {
+      "judul": "Seminar Energi Terbarukan",
+      "tanggal": "2024-05-20",
+      "src": "https://placehold.co/400x300?text=Foto+3"
+    },
+    {
+      "judul": "Kompetisi PLTS Mini",
+      "tanggal": "2024-06-01",
+      "src": "https://placehold.co/400x300?text=Foto+4"
+    }
+  ]
+}

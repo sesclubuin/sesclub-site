@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ title or metadata.title }}</title>
+		<meta name="description" content="{{ description or metadata.description }}">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+		{#- Add CSS to the bundle #}
+		<style>/* This is an arbitrary CSS string added to the bundle */</style>
+
+		{#- Add the contents of a file to the bundle #}
+		<style>{% include "css/index.css" %}</style>
+
+		{#- Render the CSS bundle using inlined CSS (for the fastest site performance in production) #}
+		<style>{% getBundle "css" %}</style>
+	</head>
+	<body>
+		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+		{% if page.url == "/" %}
+		<header class="absolute top-0 left-0 w-full z-20 px-8 py-4 flex items-center justify-between">
+			<a href="/" class="home-link font-bold text-lg" style="color: #ffffff;">{{ metadata.title }}</a>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav flex gap-6">
+				{%- for entry in collections.all | eleventyNavigation %}
+					<li class="nav-item"><a href="{{ entry.url }}" class="hover:underline transition" style="color: #0B2545; text-underline-offset: 4px; text-decoration-thickness: 2px;"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+				</ul>
+			</nav>
+		</header>
+		{% else %}
+		<header class="px-8 py-4 flex items-center justify-between" style="background-color: #F5A623;">
+			<a href="/" class="home-link font-bold text-lg" style="color: #0B2545;">{{ metadata.title }}</a>
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav flex gap-6">
+				{%- for entry in collections.all | eleventyNavigation %}
+					<li class="nav-item"><a href="{{ entry.url }}" class="hover:opacity-70 transition" style="color: #0B2545;"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+				{%- endfor %}
+				</ul>
+			</nav>
+		</header>
+		{% endif %}
+
+		{% if page.url == "/" %}
+		<main id="main">
+			{{ content | safe }}
+		</main>
+		{% else %}
+		<main id="main" style="background-color: #0B2545; min-height: 80vh;">
+			{{ content | safe }}
+		</main>
+		{% endif %}
+
+		<footer class="px-8 py-12" style="background-color: #0B2545; color: #ffffff;">
+			<div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+				<div>
+					<h3 class="font-bold text-lg mb-3">SESClub</h3>
+					<p class="text-sm text-blue-100">Sumatra Energy and Sustainability Club — klub mahasiswa fokus energi terbarukan, khususnya PLTS.</p>
+				</div>
+				<div>
+					<h3 class="font-bold text-lg mb-3">Menu</h3>
+					<ul class="text-sm space-y-2">
+						<li><a href="/" class="hover:text-secondary transition" style="color: #ffffff;">Home</a></li>
+						<li><a href="/kegiatan/" class="hover:text-secondary transition" style="color: #ffffff;">Kegiatan</a></li>
+						<li><a href="/berita/" class="hover:text-secondary transition" style="color: #ffffff;">Berita</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3 class="font-bold text-lg mb-3">Info</h3>
+					<ul class="text-sm space-y-2">
+						<li><a href="/pengurus/" class="hover:text-secondary transition" style="color: #ffffff;">Pengurus</a></li>
+						<li><a href="/galeri/" class="hover:text-secondary transition" style="color: #ffffff;">Galeri</a></li>
+						<li><a href="/about/" class="hover:text-secondary transition" style="color: #ffffff;">About</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3 class="font-bold text-lg mb-3">Kontak</h3>
+					<ul class="text-sm space-y-2">
+						<li>
+							<a href="https://instagram.com/sesclubofficial" target="_blank" class="flex items-center gap-2 hover:text-secondary transition" style="color: #ffffff;">
+								<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+								sesclubofficial
+							</a>
+						</li>
+						<li>
+							<a href="mailto:sesclub.media@gmail.com" class="flex items-center gap-2 hover:text-secondary transition" style="color: #ffffff;">
+								<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+								sesclub.media@gmail.com
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="text-center text-xs text-blue-200 mt-10 pt-6" style="border-top: 1px solid rgba(255,255,255,0.2);">
+				&copy; 2026 SESClub - Sumatra Energy and Sustainability Club
+			</div>
+		</footer>
+		<!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
+		<script type="module" src="{% getBundleFileUrl "js" %}"></script>
+	</body>
+</html>

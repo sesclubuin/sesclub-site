@@ -1,0 +1,117 @@
+---js
+const eleventyNavigation = {
+	key: "Home",
+	order: 1
+};
+---
+<section class="hero relative text-white flex flex-col items-center justify-center text-center" style="background-image: url('/img/hero/hero-solar.jpg'); background-size: cover; background-position: center; min-height: 90vh; padding-top: 8rem; padding-bottom: 5rem;">
+	<div class="absolute inset-0" style="background-color: rgba(11,37,69,0.75);"></div>
+	<div class="relative z-10 px-8">
+		<h1 class="text-5xl font-bold mb-4 max-w-3xl">Sumatra Energy and Sustainability Club</h1>
+		<p class="text-lg max-w-2xl text-blue-100" style="margin-bottom: 3rem;">Klub mahasiswa yang fokus pada energi terbarukan, khususnya PLTS (Pembangkit Listrik Tenaga Surya).</p>
+		<a href="/pengurus/" class="bg-secondary px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition" style="color: #0B2545;">Gabung Sekarang</a>
+	</div>
+</section>
+
+<section class="kenapa-join bg-white text-gray-900 px-8 py-16">
+	<h2 class="text-3xl font-bold text-center mb-10">Kenapa Gabung SESClub?</h2>
+	<div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+		<div class="bg-white shadow-md p-6 rounded-lg">
+			<div class="w-14 h-14 rounded flex items-center justify-center mb-4" style="background-color: #3D8BFF;">
+				<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+			</div>
+			<h3 class="font-semibold text-lg mb-2">Proyek Nyata</h3>
+			<p class="text-gray-600">Seputar PLTS, bukan cuma seminar</p>
+		</div>
+		<div class="bg-white shadow-md p-6 rounded-lg">
+			<div class="w-14 h-14 rounded flex items-center justify-center mb-4" style="background-color: #3D8BFF;">
+				<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3H8a2 2 0 0 0-2 2v2h12V5a2 2 0 0 0-2-2z"/></svg>
+			</div>
+			<h3 class="font-semibold text-lg mb-2">Exposure Industri</h3>
+			<p class="text-gray-600">Kompetisi dan koneksi ke dunia energi terbarukan</p>
+		</div>
+		<div class="bg-white shadow-md p-6 rounded-lg">
+			<div class="w-14 h-14 rounded flex items-center justify-center mb-4" style="background-color: #3D8BFF;">
+				<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+			</div>
+			<h3 class="font-semibold text-lg mb-2">Komunitas Aktif</h3>
+			<p class="text-gray-600">Kolaboratif dan terus bergerak</p>
+		</div>
+	</div>
+</section>
+
+<section class="kegiatan-terbaru px-8 py-16">
+	<h2 class="text-3xl font-bold text-center mb-10">Kegiatan Terbaru</h2>
+	<div class="kegiatan-list max-w-2xl mx-auto space-y-4">
+	{%- for post in collections.kegiatan | reverse | head(3) %}
+		<div class="flex gap-4 bg-gray-50 rounded-lg p-4 items-center">
+			<div class="flex-shrink-0 text-center rounded-lg px-4 py-2" style="background-color: #0B2545; color: white; min-width: 70px;">
+				<div class="text-2xl font-bold">{{ post.date | readableDate("dd") }}</div>
+				<div class="text-xs uppercase">{{ post.date | readableDate("LLL") }}</div>
+			</div>
+			<div>
+				<a href="{{ post.url }}" class="postlist-link block">{{ post.data.title }}</a>
+				<time class="text-sm text-gray-500">{{ post.date | readableDate("yyyy") }}</time>
+			</div>
+		</div>
+	{%- endfor %}
+	</div>
+	<p class="text-center mt-6">
+		<a href="/kegiatan/" class="font-semibold" style="color: #3D8BFF;">Lihat semua kegiatan →</a>
+	</p>
+</section>
+
+<section class="galeri px-8 py-16 bg-white text-gray-900">
+	<h2 class="text-3xl font-bold text-center mb-10">Galeri Kegiatan</h2>
+	<div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+	{%- for foto in galeri.foto | reverse | head(6) %}
+		<div class="rounded-lg overflow-hidden shadow-md">
+			<img src="{{ foto.src }}" alt="{{ foto.judul }}" class="w-full h-40 object-cover">
+			<p class="p-2 text-sm font-medium">{{ foto.judul }}</p>
+		</div>
+	{%- endfor %}
+	</div>
+	<p class="text-center mt-6">
+		<a href="/galeri/" class="font-semibold" style="color: #3D8BFF;">Lihat semua foto →</a>
+	</p>
+</section>
+
+<section class="pengurus-preview px-8 py-16 text-center" style="background-color: #0B2545;">
+	<h2 class="text-3xl font-bold text-white mb-4">Kepengurusan</h2>
+	<p class="text-blue-100 mb-6 max-w-xl mx-auto">Kenalan dengan tim di balik SESClub.</p>
+	<a href="/pengurus/" class="inline-block bg-secondary text-primary px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">Lihat Struktur Kepengurusan</a>
+</section>
+
+<section class="berita-terbaru px-8 py-16 bg-white text-gray-900">
+	<h2 class="text-3xl font-bold text-center mb-10">Berita Terbaru</h2>
+	<div class="kegiatan-list max-w-2xl mx-auto space-y-4">
+	{%- for post in collections.berita | reverse | head(3) %}
+		<div class="flex gap-4 bg-gray-50 rounded-lg p-4 items-center">
+			<div class="flex-shrink-0 text-center rounded-lg px-4 py-2" style="background-color: #0B2545; color: white; min-width: 70px;">
+				<div class="text-2xl font-bold">{{ post.date | readableDate("dd") }}</div>
+				<div class="text-xs uppercase">{{ post.date | readableDate("LLL") }}</div>
+			</div>
+			<div>
+				<a href="{{ post.url }}" class="postlist-link block">{{ post.data.title }}</a>
+				<time class="text-sm text-gray-500">{{ post.date | readableDate("yyyy") }}</time>
+			</div>
+		</div>
+	{%- endfor %}
+	</div>
+	<p class="text-center mt-6">
+		<a href="/berita/" class="font-semibold" style="color: #3D8BFF;">Lihat semua berita →</a>
+	</p>
+</section>
+
+<section class="contact px-8 py-16 text-center" style="background-color: #0B2545;">
+	<h2 class="text-3xl font-bold text-white mb-4">Hubungi Kami</h2>
+	<p class="text-blue-100 max-w-xl mx-auto mb-6">Tertarik gabung atau kolaborasi? Hubungi kami melalui:</p>
+	<div class="flex justify-center gap-6">
+		<a href="https://instagram.com/sesclubofficial" target="_blank" class="hover:opacity-80 transition" aria-label="Instagram SESClub">
+			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+		</a>
+		<a href="mailto:sesclub.media@gmail.com" class="hover:opacity-80 transition" aria-label="Email SESClub">
+			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+		</a>
+	</div>
+</section>

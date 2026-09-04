@@ -1,0 +1,50 @@
+{
+  "divisi": [
+    {
+      "nama_divisi": "Pimpinan",
+      "anggota": [
+        { "nama": "Muhammad Fajar S.", "jabatan": "Secretary General", "foto": "https://placehold.co/200x200?text=Foto" },
+        { "nama": "Rizky Thoyyibah", "jabatan": "Vice Secretary General", "foto": "https://placehold.co/200x200?text=Foto" }
+      ]
+    },
+    {
+      "nama_divisi": "Sekretariat",
+      "anggota": [
+        { "nama": "Nazla Khaylila", "jabatan": "Secretary", "foto": "https://placehold.co/200x200?text=Foto" },
+        { "nama": "Devany Amelia Putri", "jabatan": "Treasurer", "foto": "https://placehold.co/200x200?text=Foto" }
+      ]
+    },
+    {
+      "nama_divisi": "Departement Training",
+      "anggota": [
+        { "nama": "Taufik Hidayat", "jabatan": "Training Manager", "foto": "https://placehold.co/200x200?text=Foto" },
+        { "nama": "Aditya Rammadanni", "jabatan": "Training Officer", "foto": "https://placehold.co/200x200?text=Foto" },
+        { "nama": "M. Falhan 'Arifin", "jabatan": "Training Officer", "foto": "https://placehold.co/200x200?text=Foto" },
+        { "nama": "Ridlwan Habibi", "jabatan": "Training Officer", "foto": "https://placehold.co/200x200?text=Foto" },
+        { "nama": "Aidil Rahman", "jabatan": "Training Officer", "foto": "https://placehold.co/200x200?text=Foto" },
+        { "nama": "Muhammad Nabil", "jabatan": "Training Officer", "foto": "https://placehold.co/200x200?text=Foto" },
+        { "nama": "Rizki Alfansyah", "jabatan": "Training Officer", "foto": "https://placehold.co/200x200?text=Foto" }
+      ]
+    },
+    {
+      "nama_divisi": "Departement Outreach",
+      "anggota": [
+        { "nama": "Abdi Permana Putra", "jabatan": "Outreach Manager", "foto": "https://placehold.co/200x200?text=Foto" },
+        { "nama": "Alif Muttahhar", "jabatan": "Outreach Officer", "foto": "https://placehold.co/200x200?text=Foto" },
+        { "nama": "Rizky Ramadhan", "jabatan": "Outreach Officer", "foto": "https://placehold.co/200x200?text=Foto" },
+        { "nama": "Eka Putra E.", "jabatan": "Outreach Officer", "foto": "https://placehold.co/200x200?text=Foto" },
+        { "nama": "Aidil K.", "jabatan": "Outreach Officer", "foto": "https://placehold.co/200x200?text=Foto" }
+      ]
+    },
+    {
+      "nama_divisi": "Departement Public Relation",
+      "anggota": [
+        { "nama": "Fauzi Laksamana", "jabatan": "PR Manager", "foto": "https://placehold.co/200x200?text=Foto" },
+        { "nama": "Arif Armansyah", "jabatan": "PR Officer", "foto": "https://placehold.co/200x200?text=Foto" },
+        { "nama": "Rifqi Mulya Andika", "jabatan": "PR Officer", "foto": "https://placehold.co/200x200?text=Foto" },
+        { "nama": "Rahmat Dhani", "jabatan": "PR Officer", "foto": "https://placehold.co/200x200?text=Foto" },
+        { "nama": "Serlin Siti A.", "jabatan": "PR Officer", "foto": "https://placehold.co/200x200?text=Foto" }
+      ]
+    }
+  ]
+}
