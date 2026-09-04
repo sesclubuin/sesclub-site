@@ -24,17 +24,18 @@
 		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
 
 		{% if page.url == "/" %}
-		<header class="absolute top-0 left-0 w-full z-20 px-8 py-4 flex items-center justify-between">
-			<a href="/" class="home-link font-bold text-lg" style="color: #ffffff;">{{ metadata.title }}</a>
-			<nav>
-				<h2 class="visually-hidden">Top level navigation menu</h2>
-				<ul class="nav flex gap-6">
-				{%- for entry in collections.all | eleventyNavigation %}
-					<li class="nav-item"><a href="{{ entry.url }}" class="hover:underline transition" style="color: #0B2545; text-underline-offset: 4px; text-decoration-thickness: 2px;"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
-				</ul>
-			</nav>
-		</header>
-		{% else %}
+<header class="absolute top-0 left-0 w-full z-20 px-8 py-4 flex items-center justify-between">
+	<a href="/" class="home-link font-bold text-lg" style="color: #ffffff;">{{ metadata.title }}</a>
+	<nav>
+		<h2 class="visually-hidden">Top level navigation menu</h2>
+		<ul class="nav flex gap-6">
+		{%- for entry in collections.all | eleventyNavigation %}
+			<li class="nav-item"><a href="{{ entry.url }}" class="hover:underline transition" style="color: #ffffff; text-underline-offset: 4px; text-decoration-thickness: 2px;"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+		{%- endfor %}
+		</ul>
+	</nav>
+</header>
+{% else %}
 		<header class="px-8 py-4 flex items-center justify-between" style="background-color: #F5A623;">
 			<a href="/" class="home-link font-bold text-lg" style="color: #0B2545;">{{ metadata.title }}</a>
 			<nav>
