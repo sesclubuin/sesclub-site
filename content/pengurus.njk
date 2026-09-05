@@ -5,57 +5,61 @@ eleventyNavigation:
   key: Pengurus
   order: 4
 ---
-<section class="px-8 py-16 max-w-6xl mx-auto">
+<section class="px-8 py-16 text-center" style="background-color: #0B2545;">
 	<h1 class="text-4xl font-bold mb-2 text-white">Struktur Kepengurusan SESClub</h1>
-<p class="text-blue-100 mb-12 text-center">Tim di balik SESClub, terbagi dalam beberapa divisi.</p>
-	
-<!-- Pimpinan -->
-<div class="flex flex-col items-center">
-	<div class="rounded-lg px-6 py-3 text-center" style="background-color: #F5A623;">
-		<p class="font-bold" style="color: #0B2545;">{{ anggota.divisi[0].anggota[0].nama }}</p>
-		<p class="text-xs" style="color: #0B2545;">{{ anggota.divisi[0].anggota[0].jabatan }}</p>
-	</div>
-	<div class="w-0.5 h-8" style="background-color: #ffffff;"></div>
-	<div class="rounded-lg px-6 py-3 text-center" style="background-color: #F5A623;">
-		<p class="font-bold" style="color: #0B2545;">{{ anggota.divisi[0].anggota[1].nama }}</p>
-		<p class="text-xs" style="color: #0B2545;">{{ anggota.divisi[0].anggota[1].jabatan }}</p>
-	</div>
-	<div class="w-0.5 h-8" style="background-color: #ffffff;"></div>
-	<div class="flex gap-8">
-	{% for orang in anggota.divisi[1].anggota %}
+	<p class="text-blue-100">Tim di balik SESClub, terbagi dalam beberapa divisi.</p>
+</section>
+
+<section class="px-8 py-16 max-w-6xl mx-auto">
+
+	<!-- Pimpinan -->
+	<div class="flex flex-col items-center">
 		<div class="rounded-lg px-6 py-3 text-center" style="background-color: #F5A623;">
-			<p class="font-semibold text-sm" style="color: #0B2545;">{{ orang.nama }}</p>
-			<p class="text-xs" style="color: #0B2545;">{{ orang.jabatan }}</p>
+			<p class="font-bold" style="color: #0B2545;">{{ anggota.divisi[0].anggota[0].nama }}</p>
+			<p class="text-xs" style="color: #0B2545;">{{ anggota.divisi[0].anggota[0].jabatan }}</p>
 		</div>
-	{% endfor %}
+		<div class="w-0.5 h-8" style="background-color: #cbd5e1;"></div>
+		<div class="rounded-lg px-6 py-3 text-center" style="background-color: #F5A623;">
+			<p class="font-bold" style="color: #0B2545;">{{ anggota.divisi[0].anggota[1].nama }}</p>
+			<p class="text-xs" style="color: #0B2545;">{{ anggota.divisi[0].anggota[1].jabatan }}</p>
+		</div>
+		<div class="w-0.5 h-8" style="background-color: #cbd5e1;"></div>
+		<div class="flex gap-8">
+		{% for orang in anggota.divisi[1].anggota %}
+			<div class="rounded-lg px-6 py-3 text-center" style="background-color: #F5A623;">
+				<p class="font-semibold text-sm" style="color: #0B2545;">{{ orang.nama }}</p>
+				<p class="text-xs" style="color: #0B2545;">{{ orang.jabatan }}</p>
+			</div>
+		{% endfor %}
+		</div>
+		<div class="w-0.5 h-8" style="background-color: #cbd5e1;"></div>
 	</div>
-	<div class="w-0.5 h-8" style="background-color: #ffffff;"></div>
-</div>
 
 	<!-- Departemen -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-{% for divisi in anggota.divisi %}
-	{% if loop.index > 2 %}
-	<div class="flex flex-col items-center">
-		<div class="rounded-lg px-4 py-2 text-center mb-2 w-full" style="background-color: #0B2545;">
-			<p class="font-bold text-sm text-white">{{ divisi.nama_divisi }}</p>
+	<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+	{% for divisi in anggota.divisi %}
+		{% if loop.index > 2 %}
+		<div class="flex flex-col items-center">
+			<div class="rounded-lg px-4 py-2 text-center mb-2 w-full" style="background-color: #0B2545;">
+				<p class="font-bold text-sm text-white">{{ divisi.nama_divisi }}</p>
+			</div>
+			{% for orang in divisi.anggota %}
+				<div class="w-0.5 h-4" style="background-color: #cbd5e1;"></div>
+				{% if loop.first %}
+				<div class="rounded-lg px-4 py-2 text-center w-full" style="background-color: #F5A623;">
+					<p class="font-bold" style="color: #0B2545;">{{ orang.nama }}</p>
+					<p class="text-xs" style="color: #0B2545;">{{ orang.jabatan }}</p>
+				</div>
+				{% else %}
+				<div class="rounded-lg px-4 py-2 text-center w-full bg-gray-50" style="border: 1px solid #e5e7eb;">
+					<p class="font-medium text-sm" style="color: #1f2937;">{{ orang.nama }}</p>
+					<p class="text-xs" style="color: #6b7280;">{{ orang.jabatan }}</p>
+				</div>
+				{% endif %}
+			{% endfor %}
 		</div>
-		{% for orang in divisi.anggota %}
-			<div class="w-0.5 h-4" style="background-color: #cbd5e1;"></div>
-			{% if loop.first %}
-<div class="rounded-lg px-4 py-2 text-center w-full" style="background-color: #F5A623;">
-	<p class="font-bold" style="color: #0B2545;">{{ orang.nama }}</p>
-	<p class="text-xs" style="color: #0B2545;">{{ orang.jabatan }}</p>
-</div>
-{% else %}
-<div class="rounded-lg px-4 py-2 text-center w-full" style="background-color: #f9fafb;">
-	<p class="font-medium text-sm" style="color: #1f2937;">{{ orang.nama }}</p>
-	<p class="text-xs" style="color: #6b7280;">{{ orang.jabatan }}</p>
-</div>
-{% endif %}
-		{% endfor %}
+		{% endif %}
+	{% endfor %}
 	</div>
-	{% endif %}
-{% endfor %}
-</div>
+
 </section>

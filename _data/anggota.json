@@ -3,7 +3,7 @@
     {
       "nama_divisi": "Pimpinan",
       "anggota": [
-        { "nama": "Muhammad Fajar S.", "jabatan": "Secretary General", "foto": "https://placehold.co/200x200?text=Foto" },
+        { "nama": "Muhammad Fajar Sidiq", "jabatan": "Secretary General", "foto": "https://placehold.co/200x200?text=Foto" },
         { "nama": "Rizky Thoyyibah", "jabatan": "Vice Secretary General", "foto": "https://placehold.co/200x200?text=Foto" }
       ]
     },
@@ -43,7 +43,8 @@
         { "nama": "Arif Armansyah", "jabatan": "PR Officer", "foto": "https://placehold.co/200x200?text=Foto" },
         { "nama": "Rifqi Mulya Andika", "jabatan": "PR Officer", "foto": "https://placehold.co/200x200?text=Foto" },
         { "nama": "Rahmat Dhani", "jabatan": "PR Officer", "foto": "https://placehold.co/200x200?text=Foto" },
-        { "nama": "Serlin Siti A.", "jabatan": "PR Officer", "foto": "https://placehold.co/200x200?text=Foto" }
+        { "nama": "Serlin Siti A", "jabatan": "PR Officer", "foto": "https://placehold.co/200x200?text=Foto" },
+        { "nama": "Mutiara", "jabatan": "PR Officer", "foto": "https://placehold.co/200x200?text=Foto" }
       ]
     }
   ]

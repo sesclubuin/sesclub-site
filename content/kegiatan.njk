@@ -5,9 +5,11 @@ eleventyNavigation:
   key: Kegiatan
   order: 2
 ---
-<section class="px-8 py-16 max-w-3xl mx-auto">
+<section class="px-8 py-16 text-center" style="background-color: #0B2545;">
 	<h1 class="text-4xl font-bold mb-2 text-white">Kegiatan Kami</h1>
-<p class="text-blue-100 mb-10">Dokumentasi kegiatan dan proyek SESClub seputar energi terbarukan.</p>
+	<p class="text-blue-100">Dokumentasi kegiatan dan proyek SESClub seputar energi terbarukan.</p>
+</section>
+<section class="px-8 py-16 max-w-3xl mx-auto">
 	<div class="kegiatan-list space-y-4">
 	{%- for post in collections.kegiatan | reverse %}
 		<div class="flex gap-4 bg-gray-50 rounded-lg p-4 items-center shadow-sm">

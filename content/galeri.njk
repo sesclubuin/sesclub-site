@@ -5,9 +5,11 @@ eleventyNavigation:
   key: Galeri
   order: 5
 ---
-<section class="px-8 py-16 max-w-5xl mx-auto">
+<section class="px-8 py-16 text-center" style="background-color: #0B2545;">
 	<h1 class="text-4xl font-bold mb-2 text-white">Galeri Kegiatan SESClub</h1>
-<p class="text-blue-100 mb-10">Dokumentasi visual dari kegiatan-kegiatan SESClub.</p>
+	<p class="text-blue-100">Dokumentasi visual dari kegiatan-kegiatan SESClub.</p>
+</section>
+<section class="px-8 py-16 max-w-5xl mx-auto">
 	<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
 	{%- for foto in galeri.foto | reverse %}
 		<div class="rounded-lg overflow-hidden shadow-md">

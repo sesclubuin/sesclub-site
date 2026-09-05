@@ -297,3 +297,18 @@ header {
 .ha {
 	display: none;
 }
+
+.mobile-menu-btn {
+	display: none;
+}
+.desktop-nav {
+	display: block;
+}
+@media (max-width: 767px) {
+	.mobile-menu-btn {
+		display: block;
+	}
+	.desktop-nav {
+		display: none;
+	}
+}

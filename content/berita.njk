@@ -5,9 +5,11 @@ eleventyNavigation:
   key: Berita
   order: 3
 ---
-<section class="px-8 py-16 max-w-3xl mx-auto">
+<section class="px-8 py-16 text-center" style="background-color: #0B2545;">
 	<h1 class="text-4xl font-bold mb-2 text-white">Berita SESClub</h1>
-<p class="text-blue-100 mb-10">Update dan informasi terbaru seputar kegiatan SESClub.</p>
+	<p class="text-blue-100">Update dan informasi terbaru seputar kegiatan SESClub.</p>
+</section>
+<section class="px-8 py-16 max-w-3xl mx-auto">
 	<div class="kegiatan-list space-y-4">
 	{%- for post in collections.berita | reverse %}
 		<div class="flex gap-4 bg-gray-50 rounded-lg p-4 items-center shadow-sm">
